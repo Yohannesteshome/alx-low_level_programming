@@ -14,7 +14,7 @@ char *cap_string(char *s)
 	char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
 	while (s[a])
-i	{
+i;	{
 		i = 0;
 
 		while (i < cspc)
