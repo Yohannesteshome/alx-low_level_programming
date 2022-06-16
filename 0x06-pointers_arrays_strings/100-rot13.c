@@ -2,31 +2,34 @@
 #include <stdio.h>
 
 /**
-  * rot13 - ...
-  * @s: ...
-  *
-  * Return: ...
-  */
-char *rot13(char *s)
+ * print_number - function prints an integer
+ *
+ *@n: integer
+ *
+ * Return: nothing
+ */
+
+void print_number(int n)
 {
-	int a = 0;
+	int y = 1000000000;
+	int x, z;
 
-	while (s[a])
+	for (x = 0; x < 10; x++)
 	{
-		while ((s[a] >= 'a' && s[a] <= 'z') || (s[a] >= 'A' && s[a] <= 'Z'))
-i		{
-			if ((s[a] > 'm' && s[a] <= 'z') || (s[a] > 'M' && s[a] <= 'Z'))
-			{
-				s[a] -= 13;
-				break;
-			}
-
-			s[a] += 13;
-			break;
+		if ((n / y) == 0 && z == 0)
+		{
+			y = (y / 10);
+			continue;
 		}
-
-		a++;
+		else if (z == 0)
+		{
+			_putchar((n / y) + '0');
+			z++;
+		}
+		else
+		{
+			_putchar ((n / y) % 10 + '0');
+		}
+		y = (y / 10);
 	}
-
-	return (s);
 }
