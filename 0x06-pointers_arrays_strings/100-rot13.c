@@ -1,35 +1,30 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * print_number - function prints an integer
- *
- *@n: integer
- *
- * Return: nothing
- */
-
-void print_number(int n)
+  * rot13 - encode a string with rot13
+  * @p: the string
+  *
+  *
+  * Return: rot
+  *
+  */
+char *rot13(char *p)
 {
-	int y = 1000000000;
-	int x, z;
+	char *rot = p;
+	int j = 0;
+	char rotvalue1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rotvalue2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (x = 0; x < 10; x++)
+	while (*rot)
 	{
-		if ((n / y) == 0 && z == 0)
+		for (j = 0; rotvalue1[j]; j++)
 		{
-			y = (y / 10);
-			continue;
+			if (*rot == rotvalue1[j])
+			{
+				*rot = rotvalue2[j];
+				break;
+			}
 		}
-		else if (z == 0)
-		{
-			_putchar((n / y) + '0');
-			z++;
-		}
-		else
-		{
-			_putchar ((n / y) % 10 + '0');
-		}
-		y = (y / 10);
+		rot++;
 	}
+	return (p);
 }
