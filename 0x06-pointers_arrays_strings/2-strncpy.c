@@ -1,4 +1,4 @@
-#include "MAIn.h"
+#include "main.h"
 
 /**
  * _strncpy - a function that copies a string
