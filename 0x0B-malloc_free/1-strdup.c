@@ -1,23 +1,30 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - check the code for Holberton School students.
+ * _strdup - create a new array containing a copy of the given string
+ * @str: a pointer to the string to copy
  *
- * Return: Always 0.
+ * Return: NULL if str is NULL or if memory allocation fails,
+ * otherwise a return a pointer to the new copy
  */
-int main(void)
+char *_strdup(char *str)
 {
-    char *s;
+	char *dup;
+	unsigned int size = 0;
 
-    s = _strdup("main");
-    if (s == NULL)
-    {
-        printf("failed to allocate memory\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
+	if (str)
+	{
+		while (str[size++])
+			;
+
+		dup = malloc(sizeof(char) * size);
+		if (dup)
+		{
+			while (size--)
+				dup[size] = str[size];
+
+			return (dup);
+		}
+	}
+	return (NULL);
 }
