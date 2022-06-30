@@ -34,6 +34,7 @@ int _isnumber(char *s)
  *
  * Return: pointer
  */
+
 char *_callocX(unsigned int nmemb)
 {
 	unsigned int i;
@@ -55,6 +56,7 @@ char *_callocX(unsigned int nmemb)
  * @argv: vector
  * Return: output
  */
+
 int main(int argc, char **argv)
 {
 	int i, j, l1, l2, lful, mul, add, ten, ten2, tl, zer = 0;
